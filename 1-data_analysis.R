@@ -26,8 +26,8 @@ quarter <- c(1, 2, 3, 4)
 level <- c("lau", "nuts_3", "nuts_2", "nuts_0") 
 
 ## Folders
-dir.create(here("speedtest_data"))
-dir.create(here("speedtest_data", "raw_data"))
+dir.create(here("data"))
+dir.create(here("data", "raw_data"))
 
 ## Turn off spherical geometries
 sf_use_s2(F)
@@ -38,11 +38,11 @@ for (i in year) {
   for (j in quarter) {
     
       df <- get_performance_tiles("fixed", year = i, quarter = j, sf = T) %>% 
-        write_rds(here("speedtest_data", "raw_data", paste(i, j, sep = "_") %>% paste0(".rds"))) 
+        write_rds(here("data", "raw_data", paste(i, j, sep = "_") %>% paste0(".rds"))) 
       
       for (k in level) {
         
-       dir.create(here("speedtest_data", k)) 
+       dir.create(here("data", k)) 
         
         st_join(get(k), df) %>% 
           st_set_geometry(NULL) %>%
@@ -53,7 +53,7 @@ for (i in year) {
                  avg_u = round(avg_u_kbps/1000, 2),
                  avg_l = round(avg_lat_ms, 2), 
                  .keep = "unused") %>%
-          write_csv(here("speedtest_data", k, paste(k, i, j, sep = "_") %>% paste0(".csv")))
+          write_csv(here("data", k, paste(k, i, j, sep = "_") %>% paste0(".csv")))
         
       }
       
@@ -63,13 +63,13 @@ for (i in year) {
 
 
 ## Timeseries
-dir.create(here("speedtest_data", "timeseries"))
+dir.create(here("data", "timeseries"))
 
 for (k in level) {
   
-  list.files(here("speedtest_data", k)) %>%
-    map_df(~read_csv(here("speedtest_data", k, .x))) %>% 
+  list.files(here("data", k)) %>%
+    map_df(~read_csv(here("data", k, .x))) %>% 
     arrange(id, quarter) %>% 
-    write_csv(here("speedtest_data", "timeseries", paste("timeseries_", ".csv", sep = k)))
+    write_csv(here("data", "timeseries", paste("timeseries_", ".csv", sep = k)))
   
 }
