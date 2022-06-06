@@ -1,14 +1,14 @@
 ## In order to upload the visualizations for the dashboard we need to remove spaces and commas, and uniform the encoding 
 
 # For the htmls
-file.rename(list.files(here("visualizations", "maps", "all_maps"), full.names = T), 
-            str_replace_all(list.files(here("visualizations", "maps", "all_maps"), full.names = T), " ", "_"))
+file.rename(list.files(here("visualizations", "maps"), full.names = T), 
+            str_replace_all(list.files(here("visualizations", "maps"), full.names = T), " ", "_"))
 
-file.rename(list.files(here("visualizations", "maps", "all_maps"), full.names = T), 
-            str_replace_all(list.files(here("visualizations", "maps", "all_maps"), full.names = T), ",", ""))
+file.rename(list.files(here("visualizations", "maps"), full.names = T), 
+            str_replace_all(list.files(here("visualizations", "maps"), full.names = T), ",", ""))
 
-file.rename(list.files(here("visualizations", "maps", "all_maps"), full.names = T), 
-            stringi::stri_trans_general(list.files(here("visualizations", "maps", "all_maps"), full.names = T), "Latin-ASCII"))
+file.rename(list.files(here("visualizations", "maps"), full.names = T), 
+            stringi::stri_trans_general(list.files(here("visualizations", "maps"), full.names = T), "Latin-ASCII"))
 
 
 # For the pngs
