@@ -49,7 +49,7 @@ for (i in region) {
                                                       openPopup = T,
                                                       hideMarkerOnCollapse = T))
   
-  htmlwidgets::saveWidget(map, i %>% paste0(".html"), selfcontained = T)
+  saveWidget(map, i %>% paste0(".html"), selfcontained = T)
   
 }
 
@@ -95,7 +95,7 @@ for (i in country) {
                                                       openPopup = T,
                                                       hideMarkerOnCollapse = T)) 
   
-  htmlwidgets::saveWidget(map, i %>% paste0(".html"), selfcontained = T)
+  saveWidget(map, i %>% paste0(".html"), selfcontained = T)
   
 }
 
@@ -152,6 +152,6 @@ for (i in euro_maps) {
                                                       hideMarkerOnCollapse = T)) %>% 
     setView(13.3, 47.13, 5)
   
-  htmlwidgets::saveWidget(map, i %>% paste0(".html"), selfcontained = T)
+  saveWidget(map, i %>% paste0(".html"), selfcontained = T)
   
 }
