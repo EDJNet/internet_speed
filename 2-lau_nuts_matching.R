@@ -10,7 +10,7 @@ matcher <- read_csv("https://raw.githubusercontent.com/EDJNet/lau_centres/main/l
               rename("nuts_2" = "id",
                      "region" = "name")) 
 
-lau_matched <- read_csv(here("speedtest_data", "lau", "lau_2022_1.csv")) %>% 
+lau_matched <- read_csv(here("data", "lau", "lau_2022_1.csv")) %>% 
   mutate(country_id = substr(id, 1, 2)) %>% 
   drop_na(avg_d) %>% #some small cities do not have data and their internet speed is NA
   left_join(matcher, by = c("id" = "gisco_id")) %>% 
