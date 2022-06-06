@@ -1,6 +1,6 @@
 # Internet speed in European territorial units
 
-![This is an image](https://datavis.europeandatajournalism.eu/obct/connectivity/files/screen_dash_2022.png)
+![This is an image]([https://datavis.europeandatajournalism.eu/obct/connectivity/files/screen_dash_2022.png](https://miro.medium.com/max/1400/1*XDlGAGgORqOxl-P-PqnFhA.gif))
 
 The goal of this project is to create a [dashboard](https://datavis.europeandatajournalism.eu/obct/connectivity/) where people, but mainly journalists, can navigate the data for different territorial levels - from countries to cities - besides downloading them in a tabular format for reuse. Ultimately "opening" the data for non data-savvy professionals who might want to use this information.
 
