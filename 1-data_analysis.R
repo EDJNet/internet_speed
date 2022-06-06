@@ -1,7 +1,10 @@
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load_gh("teamokla/ooklaOpenDataR") # Source for Speedtest data
 pacman::p_load_gh("giocomai/latlon2map") # Directly downloads data from Eurogeographics
-pacman::p_load(tidyverse, sf, here, lubridate)
+pacman::p_load(tidyverse, 
+               sf, 
+               here, 
+               lubridate)
 
 ## Geometries
 lau <- ll_get_lau_eu() %>% 
