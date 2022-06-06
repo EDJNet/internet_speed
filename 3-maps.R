@@ -1,5 +1,12 @@
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(tidyverse, sf, here, leaflet, leaflet.extras, leafpop, cartography, htmlwidgets)
+pacman::p_load(tidyverse, 
+               sf, 
+               here, 
+               leaflet, 
+               leaflet.extras, 
+               leafpop, 
+               cartography, 
+               htmlwidgets)
 
 ## Folders for outputs
 dir.create(here("visualizations"))
