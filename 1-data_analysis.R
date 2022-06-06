@@ -1,3 +1,4 @@
+# Libraries
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load_gh("teamokla/ooklaOpenDataR") # Source for Speedtest data
 pacman::p_load_gh("giocomai/latlon2map") # Directly downloads data from Eurogeographics
