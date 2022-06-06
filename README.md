@@ -28,11 +28,11 @@ In the `data` folder is possible to download the datasets for every quarter sinc
 
 The data structure is common to every file, consisting in:
 - `id`, the Eurostat id code of the territorial unit;
-- `name` the name of the territorial unit;
-- `quarter` the quarter to which the measurements refer to;
-- `avg_d` average download speed in megabit per second (Mbps);
-- `avg_u` average upload speed in megabit per second (Mbps);
-- `avg_l` average latency in milliseconds (ms).
+- `name`, the name of the territorial unit;
+- `quarter`, the quarter to which the measurements refer to;
+- `avg_d`, average download speed in megabit per second (Mbps);
+- `avg_u`, average upload speed in megabit per second (Mbps);
+- `avg_l`, average latency in milliseconds (ms).
 
 ## How to cite
 
