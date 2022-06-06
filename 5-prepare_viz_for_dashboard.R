@@ -1,5 +1,6 @@
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(tidyverse, stringi)
+pacman::p_load(tidyverse, 
+               stringi)
 
 ## In order to upload the visualizations for the dashboard we need to remove spaces and commas, and uniform the encoding 
 
