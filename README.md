@@ -37,4 +37,4 @@ The data structure is common to every file, consisting in:
 ## How to cite
 
 This project is licensed under the Creative Commons Attribution 4.0 International (CC BY-SA 4.0).
-To cite this project please refer to the [European Data Journalism Network](https://www.europeandatajournalism.eu/), as well as the data provider (Speedtest by Ookla Global Fixed and Mobile Network Performance Maps based on analysis by Ookla of Speedtest Intelligence data).
+To cite this project please refer to the [European Data Journalism Network](https://www.europeandatajournalism.eu/), as well as the data provider (Speedtest by Ookla Global Fixed and Mobile Network Performance Maps).
