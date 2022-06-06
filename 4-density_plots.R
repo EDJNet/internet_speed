@@ -1,5 +1,8 @@
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(tidyverse, here, cowplot, ggtext)
+pacman::p_load(tidyverse, 
+               here, 
+               cowplot, 
+               ggtext)
 
 dir.create(here("visualizations", "density_plots"))
 
