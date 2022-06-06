@@ -1,0 +1,581 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">  
+<head>
+    
+<meta charset="utf-8" /> 
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">    
+
+<!-- Primary Meta Tags -->
+<title>Internet Speed in Europe</title>
+<meta name="title" content="Internet Speed in Europe">
+<meta name="description" content="An interactive dashboard showing the digital divide between, and within, European countries.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://datavis.europeandatajournalism.eu/obct/connectivity/index.html">
+<meta property="og:title" content="Internet Speed in Europe">
+<meta property="og:description" content="An interactive dashboard showing the digital divide between, and within, European countries.">
+<meta property="og:image" content="https://datavis.europeandatajournalism.eu/obct/connectivity/files/others/preview.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://datavis.europeandatajournalism.eu/obct/connectivity/index.html">
+<meta property="twitter:title" content="Internet Speed in Europe">
+<meta property="twitter:description" content="An interactive dashboard showing the digital divide between, and within, European countries.">
+<meta property="twitter:image" content="https://datavis.europeandatajournalism.eu/obct/connectivity/files/others/preview.png">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156168802-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-156168802-1');
+</script>
+
+
+
+<!-- Latest compiled and minified CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />    
+
+<style>
+
+        body {
+            height: 100%;
+            scroll-behavior: smooth;
+            font-family: "Lato", sans-serif;
+            font-smoothing: antialiased;
+            background-color:#f8f8ff;
+            text-align: left;
+            margin: auto;
+        }
+
+        .nav-link.active{
+            color:#283377!important;
+            background-color:#b7bee7!important;
+        }
+        .nav-text{
+            color:#283377!important;
+        }
+        img { max-width: 100%; height: auto; }
+        
+        
+        h2{    
+            font-family: Lato,sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 32px;
+            padding-bottom:1%;
+        }
+        h4 {color:#283377;padding: 7.5px 15px}
+        p { color: #333333; font-family: "Lato", sans-serif; font-size: 20px; line-height: 25px; padding-bottom:3%;}
+        i{
+            color:#283377;
+        }       
+        li a{
+            font-size:20px;
+            color:#283377;
+            font-weight: bold;
+        }
+        
+        li a:hover{
+            color:#b7bee7;
+        }
+        .dist-link{
+            color:#283377;
+            text-decoration:underline;
+        }
+        .card-header{
+            padding:0px!important;
+        }
+        hr.style-two {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+        
+        .top_menu{
+            width:100%;
+            margin:0 auto; 
+            display:block;
+            height: 50px;
+            background-color:#b7bee7;
+            overflow: hidden;
+        }
+        .top_menu a{
+            display: block;
+        }
+        
+        .topnav .icon {
+            display: none;
+        }
+        
+        .logo { 
+            float:left;
+            padding:1px;
+            max-height:50px;
+        }
+        .fa{
+            float:right;
+            padding:10px 20px 10px 0px;
+        }
+        .title{
+            width: 90vw;
+            padding:3%  5%  0% 5%;
+        }
+        .title h1{ color: #283377; font-family: 'Lato', sans-serif; font-size: 40px; font-weight: 800; line-height: 54px;text-align: center;margin-bottom:0px;}
+
+        .title p{font-size: 24px; line-height: 32px;}
+
+        
+        .textBox{
+            width:50%;
+            padding:10vh 0;
+            margin:auto;
+        }
+        .textImage{
+            width:60%;
+            margin:auto;
+            display: block;
+        }
+
+        .par-title{
+            font-size:30px;
+        }
+        
+        .card-main{
+            height:95vh;
+            border-radius:10px;
+        }
+        .card-viz{
+            height:600px;border-radius:10px;
+        }
+        .card-img{
+            height:600px;border-radius:10px;
+        }
+        #rightImage{
+            width:100%;
+            height:100%;
+            max-height:466px;
+            margin: 20px 0px 0px 0px;
+        }
+        #leftFrame{
+            height:466px
+        }
+        .button {
+          display:inline;
+          background-color: #283377;
+          width: 50px;
+          height: 50px;
+          text-align: center;
+          float: right;
+          border-radius: 4px;
+          transition: background-color .3s, 
+          opacity .5s, visibility .5s;
+          z-index: 1000;
+          margin:20px;
+        }
+        .button::after {
+          content: "\f077";
+          font-family: FontAwesome;
+          font-weight: normal;
+          font-style: normal;
+          font-size: 2em;
+          line-height: 50px;
+          color: #fff;
+        }
+        .button:hover {
+          cursor: pointer;
+          background-color: #b7bee7;
+        }
+
+
+        @media only screen and (max-width: 850px) {
+            a i{
+                font-size: 1.5em!important;
+            } 
+
+            p { color: #333333; font-family: Lato, sans-serif; font-size: 18px; line-height: 20px;}
+                       
+            .title{
+                width: 80vw;
+                padding: 5%;
+            }
+            .title h1{font-family: 'Lato', sans-serif; font-size: 40px; font-weight: 800; line-height: 44px;}
+
+            .textBox{
+                width:70%;
+                padding:10vh 0;
+                margin:auto;
+                border-radius:5px;
+            }
+            #rightImage{
+            width:100%;
+            height:100%;
+            max-height:466px;
+            margin: 5px 0px 0px 0px;
+        }
+            
+        } 
+        
+        @media only screen and (max-width: 550px) {
+
+            .card-main{
+                height:80vh;
+                border-radius:10px;
+            }
+            
+            .card-viz{
+                height:500px;border-radius:10px;
+            }
+            #leftFrame{
+                height:366px
+            }
+
+            .card-img{
+                height:400px;
+            }            
+            #first{
+                padding: 3px!important;
+            }
+            a i{
+                font-size: 1.25em!important;
+            }    
+                                        
+            
+            li a{
+               font-size: 13px!important; 
+            }
+            
+            p { color: #333333; font-family: Lato, sans-serif; font-size: 15px; line-height: 16px;}
+
+            .title{
+                width: 80vw;
+                padding: 5%;
+            }
+            .title h1{ font-family: 'Lato', sans-serif; font-size: 30px; font-weight: 800; line-height: 34px;}
+    
+            
+            .textBox{
+                width:80%;
+                padding:10vh 0;
+                margin:auto;
+            }
+            
+            h2{    
+                font-family: Lato,sans-serif;
+                font-size: 24px;
+                font-weight: 900;
+                line-height: 28px;
+                padding-bottom:1%;
+            }
+        } 
+        @media only screen and (max-width: 450px) {
+            .top_menu{
+                height:40px;
+            }
+            .logo{
+                width:80px;
+                height:40px;
+            }
+            a i{
+                font-size: 1em!important;
+            } 
+            .fa{
+                padding:13px 7px 11px 0px;
+            }
+        }
+</style>
+</head> 
+   
+<body id="page-top"> 
+    
+    <div class="top_menu">
+
+        <a class="" href="#">
+            <img src="files/others/logo.png" class="logo" alt="logo">
+        </a>
+        <a href="https://medium.com/european-data-journalism-network"><i class="fa fa-medium fa-2x" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/EdjNet"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/edjnet/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+        
+        <ul class="nav nav-pills justify-content-center" >
+
+            <li class="nav-item">
+                <a class="nav-link nav-text"  href="#second">Maps</a>
+             </li>
+            <li class="nav-item">
+                <a class="nav-link nav-text" href="#third">About</a>
+            </li>
+        </ul> 
+
+    </div>
+
+    
+    <div class="title mx-auto">
+        <h1>Average internet speed across Europe</h1>            
+    </div>
+  
+    
+    <div class="row p-5" id="first">
+            <div class="col-lg-12">
+                <div class="card shadow card-main" >
+                    <div class="card-header">
+                        <ul class="nav nav-pills justify-content-center" id="iframe-list">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="">Countries</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"  href="">NUTS-2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">NUTS-3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body" id="main-body" style="padding:0!important">                                               
+                        <iframe src="files/europe/countries.html" id="frame-sel" width="100%"  frameborder="0" border="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    
+    
+    <hr class="style-two my-5">
+    
+    <div class="container-fluid py-5" id="second">          
+        <div class="row">
+            <!-- Area Chart -->
+            <div class="col-xl-6 col-lg-6">
+                <div class="card card-viz shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                    <div class="card-header d-flex flex-row align-items-center justify-content-between">
+                      <h4 class="m-0 font-weight-bold">Municipalities</h4>
+                    </div>
+                <!-- Card Body -->
+                    <div class="card-body"  >
+                        <div class="row">
+                            <div class="col-6">
+                                <select id="select-state1" placeholder="Pick a country">
+                                    <option value=AL>Albania</option>
+                                    <option value=AT>Austria</option>
+                                    <option value=BE>Belgium</option>
+                                    <option value=BG>Bulgaria</option>
+                                    <option value=HR>Croatia</option>   
+                                    <option value=CY>Cyprus</option>
+                                    <option value=CZ>Czechia</option>
+                                    <option value=DK>Denmark</option>
+                                    <option value=EE>Estonia</option>
+                                    <option value=FI>Finland</option>
+                                    <option value=FR>France</option>
+                                    <option value=DE>Germany</option>
+                                    <option value=EL>Greece</option>
+                                    <option value=HU>Hungary</option>
+                                    <option value=IS>Iceland</option> 
+                                    <option value=IE>Ireland</option>
+                                    <option value=IT>Italy</option>
+                                    <option value=LV>Latvia</option>
+                                    <option value=LI>Liechtenstein</option>
+                                    <option value=LT>Lithuania</option>
+                                    <option value=LU>Luxembourg</option>
+                                    <option value=MT>Malta</option>
+                                    <option value=NL>Netherlands</option>
+                                    <option value=MK>North Macedonia</option>
+                                    <option value=NO>Norway</option>
+                                    <option value=PL>Poland</option>
+                                    <option value=PT>Portugal</option>
+                                    <option value=RO>Romania</option>
+                                    <option value=RS>Serbia</option>
+                                    <option value=SK>Slovakia</option>
+                                    <option value=SI>Slovenia</option>
+                                    <option value=ES>Spain</option>
+                                    <option value=SE>Sweden</option>
+                                    <option value=CH>Switzerland</option>
+                                    <option value=UK>United Kingdom</option>
+   
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <select id="select-state2" placeholder="Pick a region">
+        
+                                </select>
+                            </div>
+                        </div>
+                        <iframe src="" id="leftFrame" scrolling="no" frameborder="0"  border="0" style="width:100%!important;display:none"></iframe> 
+                        <img src="files/others/left.png" id="leftImage" class="mx-auto" style="width:100%;height:90%;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6">
+                <div class="card shadow mb-4 card-img" >
+                <!-- Card Header - Dropdown -->
+                    <div class="card-header d-flex flex-row align-items-center justify-content-between">
+                      <h4 class="m-0 font-weight-bold">Comparing average municipalities speed <a href="https://datavizcatalogue.com/methods/density_plot.html" target="_blank" class="dist-link">distribution</a></h4>
+                    </div>
+                <!-- Card Body -->       
+                    <div class="card-body">
+                        <img src="files/others/right.png" id="rightImage" class="mx-auto">
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>    
+    
+    <span><a class="button" id="btn1" style="position: relative;bottom: 3em;"></a></span>
+
+    <hr class="style-two my-5">
+    
+    <div class="textBox py-5" id="third">
+       
+    <h2 >About</h2>
+    
+    <p> 
+    The data source is <a href="https://www.speedtest.net/" target="_blank" class="dist-link">Speedtest</a> by <a href="https://registry.opendata.aws/speedtest-global-performance/" target="_blank" class="dist-link">Ookla</a> Global Fixed and Mobile Network Performance Maps.
+    Based on analysis by Ookla of Speedtest Intelligence data for the first quarter of 2022.<br><br> 
+    Average download and upload speed values are expressed in <a href="https://www.redhat.com/sysadmin/bits-vs-bytes" target="_blank" class="dist-link">megabit per second (Mbps)</a>. Average latency values are expressed in milliseconds (ms).<br><br>
+    These articles delves further into the matter.<br><br>
+    <a href="https://www.europeandatajournalism.eu/eng/News/Data-news/Europe-s-internet-speeds-are-faster-than-ever-but-not-for-everyone" target="_blank" class="dist-link">Europe’s internet speeds are faster than ever, but not for everyone</a><br>
+    <a href="https://www.europeandatajournalism.eu/eng/News/Data-news/Where-do-we-stand-on-the-road-to-a-European-Gigabit-Society" target="_blank" class="dist-link">Where do we stand on the road to a European Gigabit Society?</a><br>
+    <a href="https://medium.com/european-data-journalism-network/internet-speed-in-europe-b4aec3b9cacd" target="_blank" class="dist-link">Here</a> you will find a short methodological note.<br>
+    <a href="https://github.com/gjeornaldo/internet_speed" target="_blank" class="dist-link">Here</a> you will find the code used for the analysis and the visualizations.<br>
+    <a href="https://github.com/gjeornaldo/internet_speed/tree/main/data" target="_blank" class="dist-link">Here</a> you will find the complete datasets.
+    </p>
+    
+    
+    <h2 >Contacts</h2>
+    <p><a>info@europeandatajournalism.eu</a></p>
+    <h2>Credits</h2>
+    <p>Data analysis, visualisations, and web development: Ornaldo Gjergji</p>
+    
+    </div>   
+    <div>
+    <span><a id="btn2" class="button"  style="position: relative;bottom: 10em;"></a></span>
+  
+        
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span> <a href="https://www.europeandatajournalism.eu/">www.europeandatajournalism.eu</a> 2021 CC BY-SA 4.0</span>
+          </div>
+        </div>
+    </div>
+<script>
+
+var height;
+height = $("#main-body").height();
+$("#frame-sel").height(height);
+
+
+window.onresize = function(){
+    height = $("#main-body").height();
+    $("#frame-sel").height(height);
+}
+
+var allData;
+
+$.ajax({
+    url: 'files/selector_az.csv',
+    dataType: 'text',
+}).done(successFunction);
+
+function successFunction(data) {
+  allData = data.split(/\r?\n|\r/);
+  
+  for (var singleRow = 0; singleRow < allData.length; singleRow++) {
+    allData[singleRow] = allData[singleRow].split(',');
+  }
+}
+
+var selector1 = $('#select-state1').selectize();
+var control1 = selector1[0].selectize;
+
+var selector2 = $('#select-state2').selectize();
+var control2 = selector2[0].selectize;
+
+control1.clear();
+
+var btn = $('.button');    
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+var btn1 = $("#btn1");
+var btn2 = $("#btn2");
+
+$('#select-state1').on('change', function() {
+    
+    var textOption = this.options[this.selectedIndex].text;
+    textOption = textOption.replace(/\s/g,'_');
+   // textOption = textOption.toLowerCase();
+
+    var valueOption = $(this).val();
+
+    control2.clear();
+    control2.clearOptions();
+
+    var i = 0;
+    for(i; i<allData.length; i++){
+
+        if(allData[i][0] == valueOption){
+            
+            var value = allData[i][0];
+            var text = allData[i][1];
+            text = text.replaceAll("_", " ");
+            control2.addOption({
+                text:text,
+                value: i
+            });
+            control2.addItem(value);
+            
+        }
+    }
+   // control2.close();
+    if(textOption){
+      $("#leftFrame").attr("src","files/html/" +textOption+ ".html");
+      $("#rightImage").attr("src","files/png/" +textOption+ ".png");
+      $("#leftImage").hide();
+      $("#leftFrame").show();
+    }
+});
+
+$('#select-state2').on('change', function() {
+    
+    var textOption = this.options[this.selectedIndex].text;
+    
+    textOption = textOption.replace(/\s/g,'_');
+    
+    if(textOption){
+      $("#leftFrame").attr("src","files/html/" +textOption+ ".html");
+      $("#rightImage").attr("src","files/png/" +textOption+ ".png");
+    }
+});
+
+
+$('#iframe-list a').on('click', function (e) {
+  e.preventDefault();
+  $('#iframe-list a').removeClass("active");
+  $(this).addClass("active");
+  var text = $(this).text();
+  text = text.toLowerCase();
+  $("#frame-sel").attr("src","files/europe/" +text+ ".html");
+});
+
+</script> 
+</body>   
+</html>
