@@ -9,7 +9,7 @@ The goal of this project is to create a [dashboard](https://datavis.europeandata
 This projects combines two different open data sources:
 
 - the internet performances data provided by [Speedtest](https://www.speedtest.net/) by [Ookla](https://registry.opendata.aws/speedtest-global-performance/) Global Fixed and Mobile Network Performance Maps, based on analysis by Ookla of Speedtest Intelligence data. Available through the library [`ooklaOpenDataR`](https://github.com/teamookla/ooklaOpenDataR);
-- the geometries of European territorial units (local administrative units (LAU) and regions/districts (NUTS2/NUTS3)) distributed by [Eurostat](https://ec.europa.eu/eurostat/web/nuts/nuts-maps) EU Member States, EU official candidate countries, and EFTA countries. Available through the library [`latlon2map`](https://github.com/giocomai/latlon2map).
+- the geometries of European territorial units (local administrative units (LAU) and regions/districts (NUTS2/NUTS3)) distributed by [Eurostat](https://ec.europa.eu/eurostat/web/nuts/nuts-maps) for EU Member States, EU official candidate countries, and EFTA countries. Available through the library [`latlon2map`](https://github.com/giocomai/latlon2map).
 
 ## Analysis
 
