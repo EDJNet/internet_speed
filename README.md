@@ -26,7 +26,7 @@ The analysis consists in 5 steps, and as many scripts.
 The data is provided by Ookla every quarter from Q1 2019. 
 In the `data` folder is possible to download the datasets for every quarter since Q1 2019 for every territorial unit (`lau`, `nuts3`, `nuts2`, `nuts0`) as well as the time series for every territorial unit.
 
-The data structure is common for every file, consisting in:
+The data structure is common to every file, consisting in:
 - `id`, the Eurostat id code of the territorial unit;
 - `name` the name of the territorial unit;
 - `quarter` the quarter to which the measurements refer to;
