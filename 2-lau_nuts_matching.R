@@ -1,5 +1,6 @@
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(tidyverse, sf)
+pacman::p_load(tidyverse, 
+               sf)
 
 ## We need to match the data at the city level with their respective regions and countries
 ## The dataset obtained by this matching will be used for the maps and the density plots
