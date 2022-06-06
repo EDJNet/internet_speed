@@ -1,4 +1,4 @@
-## In order to upload the visualizations we need to remove spaces and commas; and uniform the encoding 
+## In order to upload the visualizations for the dashboard we need to remove spaces and commas, and uniform the encoding 
 
 # For the htmls
 file.rename(list.files(here("visualizations", "maps", "all_maps"), full.names = T), 
