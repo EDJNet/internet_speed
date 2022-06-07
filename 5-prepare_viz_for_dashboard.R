@@ -13,7 +13,7 @@ file.rename(list.files(here("visualizations", "maps"), full.names = T),
             str_replace_all(list.files(here("visualizations", "maps"), full.names = T), ",", ""))
 
 file.rename(list.files(here("visualizations", "maps"), full.names = T), 
-            stringi::stri_trans_general(list.files(here("visualizations", "maps"), full.names = T), "Latin-ASCII"))
+            stri_trans_general(list.files(here("visualizations", "maps"), full.names = T), "Latin-ASCII"))
 
 
 # For the pngs
