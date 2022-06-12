@@ -35,6 +35,7 @@ year <- c(2019, 2020, 2021, 2022)
 quarter <- c(1, 2, 3, 4)
 level <- c("lau", "nuts_3", "nuts_2", "nuts_0") 
 
+
 ## Folders
 dir.create(here("data"))
 dir.create(here("data", "raw_data"))
@@ -44,7 +45,7 @@ dir.create(here("data", "raw_data"))
 sf_use_s2(F)
 
 
-## Loop to download/analyse/write outputs
+## Loop to download raw data/analyse/write outputs
 for (i in year) {
   
   for (j in quarter) {
