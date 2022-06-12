@@ -1,4 +1,4 @@
-# Libraries
+## Libraries
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse,
                sf)
@@ -36,7 +36,6 @@ table_lau <- read_csv(here("data", "timeseries", "timeseries_lau.csv")) %>%
   write_csv("table_lau.csv")
 
 
-
 table_nuts_3 <- read_csv(here("data", "timeseries", "timeseries_nuts_3.csv")) %>% 
   left_join(matcher, by = c("id" = "nuts_3")) %>%
   mutate(country = str_replace_all(country, "EL", "GR")) %>% 
@@ -51,7 +50,6 @@ table_nuts_3 <- read_csv(here("data", "timeseries", "timeseries_nuts_3.csv")) %>
   write_csv("table_nuts_3.csv")
 
 
-
 table_nuts_2 <- read_csv(here("data", "timeseries", "timeseries_nuts_2.csv")) %>% 
   left_join(matcher, by = c("id" = "nuts_2")) %>% 
   mutate(Country = ":" %>% 
@@ -63,7 +61,6 @@ table_nuts_2 <- read_csv(here("data", "timeseries", "timeseries_nuts_2.csv")) %>
   mutate(Variation = round((`2022-01-01`-`2019-01-01`)/`2019-01-01`*100, 1)) %>% 
   drop_na() %>%
   write_csv("table_nuts_2.csv")
-
 
 
 table_countries <- read_csv(here("data", "timeseries", "timeseries_nuts_0.csv")) %>% 
