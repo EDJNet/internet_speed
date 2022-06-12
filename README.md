@@ -11,7 +11,7 @@ This project combines two open data sources:
 
 ## Analysis
 
-The analysis consists of 5 steps, and as many scripts.
+The analysis and the rpeparation of all the elements for the dashboard consists of 6 steps, and as many scripts.
 
 - `1-data_analysis.R` consists of a loop that downloads the raw data from Ookla, executes the geocomputation and performs the tidying necessary to store the raw files and the outputs of the analysis;
 - `2-lau_nuts_matching.R` matches the European cities with their respective regions, as this is not directly provided by Eurostat but it's needed for the comparisons we show in the dashboard;
