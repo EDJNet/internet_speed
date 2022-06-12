@@ -7,22 +7,28 @@ pacman::p_load(tidyverse,
                here, 
                lubridate)
 
+
 ## Geometries
 lau <- ll_get_lau_eu() %>% 
-  rename("id" = "GISCO_ID",  "name" = "LAU_NAME") %>% 
+  rename("id" = "GISCO_ID",  
+         "name" = "LAU_NAME") %>% 
   select(id, name) 
 
 nuts_3 <- ll_get_nuts_eu(level = 3, resolution = 1) %>% 
-  rename("id" = "NUTS_ID", "name" = "NAME_LATN") %>% 
+  rename("id" = "NUTS_ID", 
+         "name" = "NAME_LATN") %>% 
   select(id, name) 
 
 nuts_2 <- ll_get_nuts_eu(level = 2, resolution = 1) %>%
-  rename("id" = "NUTS_ID", "name" = "NAME_LATN") %>% 
+  rename("id" = "NUTS_ID", 
+         "name" = "NAME_LATN") %>% 
   select(id, name)
 
 nuts_0 <- ll_get_nuts_eu(level = 0, resolution = 1) %>%
-  rename("id" = "NUTS_ID", "name" = "NAME_LATN") %>% 
+  rename("id" = "NUTS_ID", 
+         "name" = "NAME_LATN") %>% 
   select(id, name)
+
 
 ## Vectors to loop 
 year <- c(2019, 2020, 2021, 2022)
@@ -33,16 +39,20 @@ level <- c("lau", "nuts_3", "nuts_2", "nuts_0")
 dir.create(here("data"))
 dir.create(here("data", "raw_data"))
 
+
 ## Turn off spherical geometries
 sf_use_s2(F)
+
 
 ## Loop to download/analyse/write outputs
 for (i in year) {
   
   for (j in quarter) {
-    
-      df <- get_performance_tiles("fixed", year = i, quarter = j, sf = T) %>% 
-        write_rds(here("data", "raw_data", paste(i, j, sep = "_") %>% paste0(".rds"))) 
+
+      if (!file.exists(here("data", "raw_data", paste(i, j, sep = "_") %>% paste0(".rds")))) {
+          
+          df <- get_performance_tiles("fixed", year = i, quarter = j, sf = T) %>%
+          write_rds(here("data", "raw_data", paste(i, j, sep = "_") %>% paste0(".rds"))) 
       
       for (k in level) {
         
@@ -60,7 +70,30 @@ for (i in year) {
           write_csv(here("data", k, paste(k, i, j, sep = "_") %>% paste0(".csv")))
         
       }
+
+    } else {
+
+        df <- read_rds(here("data", "raw_data", paste(i, j, sep = "_") %>% paste0(".rds")))
       
+      for (k in level) {
+        
+        dir.create(here("data", k)) 
+        
+        st_join(get(k), df) %>%
+          st_set_geometry(NULL) %>%
+          group_by(id) %>% 
+          summarise(across(contains("avg"), weighted.mean, w = tests, na.rm = T)) %>% 
+          mutate(quarter = yq(paste(i, j, sep = "_")),
+                 avg_d = round(avg_d_kbps/1000, 2),
+                 avg_u = round(avg_u_kbps/1000, 2),
+                 avg_l = round(avg_lat_ms, 2), 
+                 .keep = "unused") %>%
+          write_csv(here("data", k, paste(k, i, j, sep = "_") %>% paste0(".csv")))
+        
+      }
+      
+    }
+    
   }
   
 }
