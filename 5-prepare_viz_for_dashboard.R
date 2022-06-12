@@ -1,11 +1,11 @@
-# Libraries
+## Libraries
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, 
                stringi)
 
 ## In order to upload the visualizations for the dashboard we need to remove spaces and commas, and uniform the encoding 
 
-# For the htmls
+## For the htmls
 file.rename(list.files(here("visualizations", "maps"), full.names = T), 
             str_replace_all(list.files(here("visualizations", "maps"), full.names = T), " ", "_"))
 
@@ -16,7 +16,7 @@ file.rename(list.files(here("visualizations", "maps"), full.names = T),
             stri_trans_general(list.files(here("visualizations", "maps"), full.names = T), "Latin-ASCII"))
 
 
-# For the pngs
+## For the pngs
 file.rename(list.files(here("visualizations", "density_plots"), full.names = T), 
             str_replace_all(list.files(here("visualizations", "density_plots"), full.names = T), " ", "_"))
 
