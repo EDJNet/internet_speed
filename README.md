@@ -18,7 +18,7 @@ The analysis and the rpeparation of all the elements for the dashboard consists 
 - `3-maps.R` creates and saves interactive html maps with [`leaflet`](https://rstudio.github.io/leaflet/) for every NUTS2 region and country, as well as European maps;
 - `4-density_plots.R` creates and saves static density plots useful to compare the internet speed distribution between a region, the country it is located, and Europe;
 - `5-prepare_viz_for_dashboard.R` is used to standardise the encoding and clean the visualizations' names from white spaces and commas in order to properly show the elements in the dashboard.
-- `6-data_for_tables.R` creates the structure of the tables as shown in the dashboard. The tables have been visualized with Datawrapper.
+- `6-data_for_tables.R` creates the structure of the tables as shown in the dashboard. The tables have been visualized with [Datawrapper](https://www.datawrapper.de/tables).
 
 ## Data structure explanation
 
