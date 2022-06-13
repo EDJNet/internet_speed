@@ -1,4 +1,4 @@
-The goal of this project is to create a [dashboard](https://datavis.europeandatajournalism.eu/obct/connectivity/) on internet perfornace across Europe where people, but mainly journalists, can navigate the data for different territorial levels - from countries to cities - and download them in a tabular format for reuse. This ultimately “opens” the data for non-data-savvy professionals who might want to use this information.
+The goal of this project is to create a [dashboard](https://datavis.europeandatajournalism.eu/obct/connectivity/) on internet performance across Europe where people, but mainly journalists, can navigate the data for different territorial levels - from countries to cities - and download them in a tabular format for reuse. This ultimately “opens” the data for non-data-savvy professionals who might want to use this information.
 
 ![](https://datavis.europeandatajournalism.eu/obct/connectivity/files/screen_dash_2022.png)
 
