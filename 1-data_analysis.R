@@ -1,6 +1,6 @@
 ## Libraries
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load_gh("teamokla/ooklaOpenDataR") # Source for Speedtest data
+pacman::p_load_gh("teamookla/ooklaOpenDataR") # Source for Speedtest data
 pacman::p_load_gh("giocomai/latlon2map") # Source for European geometries
 pacman::p_load(tidyverse, 
                sf, 
